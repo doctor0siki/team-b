@@ -4,9 +4,9 @@ namespace Model\Dao;
 use Doctrine\DBAL\Query\QueryBuilder;
 
 /**
- * Class User
+ * Class Chat
  *
- * Userテーブルを扱う Classです
+ * Chat Classです
  * DAO.phpに用意したCRUD関数以外を実装するときに、記載をします。
  *
  * @copyright Ceres inc.
@@ -14,15 +14,15 @@ use Doctrine\DBAL\Query\QueryBuilder;
  * @since 2018/08/28
  * @package Model\Dao
  */
-class Event extends Dao{
+class Chat extends Dao{
 
-    public function getEventByIds($ids)
+    public function getChatByEventId($eventId)
     {
         $queryBuilder = new QueryBuilder($this->db);
 
         $queryBuilder
             ->select('*')
-            ->andWhere("id in"."(".implode(',', array_column($ids, 'event_id')).")")
+            ->where("event_id =".$eventId)
             ->from($this->_table_name);
 
         $query = $queryBuilder->execute();
