@@ -1,0 +1,16 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": true,
+  "deleteLocal": false,
+  "hostname": "192.168.0.19",
+  "port": "22",
+  "target": "/opt/intern/app/team-b/project",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "team-b",
+  "password": "team-b!",
+  "watch": [],
+  "transport": "scp"
+}
