@@ -10,43 +10,17 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-  <link href="/assets/css/common.css" rel="stylesheet">
-    <div class="text-center mb-4">
-        <h1 class="main"><img src="http://teamb.2020-graduates.tk/img/logo__.png" height="90" width="270"></h1>
+    <div class="page-header text-center">
+        <h1>サービス名</h1>
     </div>
     <div class="container">
         <div class="box">
             <div class="row">
-                <h2 class="top">エンジニア向けのオンライン勉強会</h2>
-                  <ul class="copy">
-                    <li>ひとりで勉強するのが<font color="red">ツライ</font></li>
-                    <li><font color="green">地方住み</font>だから都心部で開かれる勉強会に参加できない</li>
-                    <li><font color="red">初心者</font>で何をやったら良いか分からない</li>
-                    <li><font color="blue">スキマ時間</font>を有効活用したい</li>
-                    <li>エンジニア同士で<font color="blue">繋がりたい</font></li>
-                    <li>学んだ知識を<font color="green">人に教えて</font>役立ててほしい</li>
-                  </ul>
-                <p class="box7">
-                  そんな思いをもつエンジニアの皆さんに活用していただきたい、オンラインで<font color="#b15cdc">いつでも</font>・<font color="#55d583">誰でも</font>勉強会を開催できるサービスです。
-              </p>
+                ここにコンテンツが入る
             </div>
-            <h2 class="postit">開催中の勉強会</h2>
-            <center><a href="/" class="square_btn39">最新の状態に更新する</a></center><br>
-            <ul class="event">
-              <!-- 開催中イベントの列挙 -->
-              {% for event in events %}
-                <li><h3 class="head_test"><a href="/event/{{event.id}}">{{event.title}}</h3></a><br>
-                  <!-- イベント詳細の文字数が40字以上の場合，以降を…で省略する -->
-                  {{ event.detail|length > 40 ? event.detail|slice(0, 40) ~ '…' : event.detail }}
-                  <br>
-                   by <a href="/user/{{event.host.id}}/">{{event.host.name}}</a><br>
-                 {{event.startDate}} より開始</li><br>
-              {% endfor %}
-            </ul>
         </div>
     </div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
-{% block footer_scripts_add %}
-{% endblock %}
+{% block footer_scripts_add %}{% endblock %}

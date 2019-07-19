@@ -10,7 +10,6 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <link href="/assets/css/common.css" rel="stylesheet">
     <div class="page-header text-center">
         <h1>退会の確認</h1>
     </div>
@@ -19,7 +18,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="well text-center">
-                        現在退会することができません。運営にお問い合わせください。
+                        退会をすると、サービスが利用できなくなります。よろしいですか？
+                        <br>
+                        <br>
+                        <p class="text-center">
+                        <form action="/resign/" method="post">
+                            <button class="btn btn-info">退会する</button>
+                        </form>
+                        </p>
                     </div>
                 </div>
 
