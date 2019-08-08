@@ -25,29 +25,28 @@ $app->post('/register/', function (Request $request, Response $response) {
     //ユーザーDAOをインスタンス化
     $user = new User($this->db);
 
+    //入力項目がマッチしない場合エラーを出す 以下エラー処理
+    $data["error"] = "";
+
     //入力されたメールアドレスの会員が登録済みかどうかをチェックします
     if ($user->select(array("email" => $data["email"]), "", "", 1, false)) {
-
-        //入力項目がマッチしない場合エラーを出す
         $data["error"] = "このメールアドレスは既に会員登録済みです";
-
-        // 入力フォームを再度表示します
-        return $this->view->render($response, 'register/register.twig', $data);
-
     }
+    //2階入力されたpasswordが一致しない
     if($data["password"]!==$data["password_re"]){
-         $data["error"] = "パスワードの再入力に間違いがあります。ね";
+         $data["error"] = "パスワードの再入力に間違いがあります。";
+    }
+    if(strlen($data["password"])<8){
+      $data["error"] = "パスワードは8文字以上に設定してください。";
+    }
 
+    if(strlen($data["error"])>0){
       // 入力フォームを再度表示します
-         return $this->view->render($response, 'register/register.twig', $data);
-
+      return $this->view->render($response, 'register/register.twig', $data);
     }
 
     //DB登録に必要ない情報は削除します
     unset($data["password_re"]);
-
-    //if passが異なるなら弾く
-    //if passが短いなら弾く
 
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
     $id = $user->insert($data);
