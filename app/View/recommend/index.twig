@@ -4,28 +4,40 @@
 
 
 {#HTMLのタイトルを定義します。#}
-{% block title %}お酒をオススメ{% endblock %}
+{% block title %}オススメのお酒は{% endblock %}
 
 {# 適用させたいスタイルシートのパスを指定します #}
 {% block header_scripts_add %}
+<link rel="stylesheet" href="/assets/css/recommend.css" >
 {% endblock %}
-
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <div class="page-header text-center">
-        <h1>オススメのお酒は...</h1>
+    <div class="page-header text-center pre-recommend">
+        <h2>オススメのお酒は...</h2>
     </div>
     <div class="container">
-        <div class="box" style="margin:1em;">
-<!--              <div class="row text-center">オススメのお酒は...</div>-->
-              <div class="alcName row" style="text-align:center;">
-                <!-- beer.imgはテスト画像 実際はDBのalc.picPassを指定-->
-                <img src="/assets/img/alc/{{result.picpass}}" style="width:400px%;height:400px; margin:auto;"/>
+        <div class="box main-box">
+              <div class="row">
+                <div class="col-12 alc-name">
+                  ビール
+                </div>
               </div>
-              <div class="row" style="margin:1em;">夏と言えばビール。冬でもビール。勿論春・秋もビール。食前酒として「とりあえずビール」と注文する人が多い。独特の苦味のあるのが特徴。</div>
+                <!-- beer.imgはテスト画像 実際はDBのalc.picPassを指定-->
+
+                <img src="/assets/img/alc/{{result.picpass}}" style="width:400px%;height:400px; margin:auto;"/>
+
+              <div class="row">
+                <div class="col-12">
+                  <img class="alc-pic" src="/assets/img/beer.jpg" />
+                </div>
+              </div>
+<!--              <div class="row" style="margin:1em;">夏と言えばビール。冬でもビール。勿論春・秋もビール。食前酒として「とりあえずビール」と注文する人が多い。独特の苦味のあるのが特徴。</div>-->
+              <div class="row">
+                <div class="col-12 alc-exp">このお酒に関する詳しい情報は<a href="https://ja.wikipedia.org/wiki/ビール">こちら</a></div>
+              </div>
               <div class="buttons row">
-                <div class="col-6"><a href="/recommend" class="btn btn-default">他のお酒を探す</a></div>
-                <div class="col-6"><a href="/logintop/" class="btn btn-default">戻る</a></div>
+                <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="location.href='/recommend/'">他のお酒を探す</button></div>
+                <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="location.href='/logintop/'">戻る</button></div>
               </div>
         </div>
     </div>

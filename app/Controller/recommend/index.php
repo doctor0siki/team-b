@@ -3,6 +3,13 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+/*
+// recommend/index.twigのテスト用ルーティング
+// ここのコメントアウトを取る場合は、use Model\Dao\Alc;以下をコメントアウト
+$app->get('/recommend/', function (Request $request, Response $response) {
+    // Render index view
+    return $this->view->render($response, 'recommend/index.twig');
+});*/
 
 use Model\Dao\Alc;
 
