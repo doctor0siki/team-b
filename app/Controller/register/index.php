@@ -39,6 +39,9 @@ $app->post('/register/', function (Request $request, Response $response) {
     if(strlen($data["password"])<12){
       $data["error"] = "パスワードは12文字以上に設定してください。";
     }
+    if(strlen($data["age"])<20){
+      $data["error"] = "20歳未満の方は登録できません。";
+    }
 
     if(strlen($data["error"])>0){
       // 入力フォームを再度表示します
