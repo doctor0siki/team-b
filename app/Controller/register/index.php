@@ -35,9 +35,19 @@ $app->post('/register/', function (Request $request, Response $response) {
         return $this->view->render($response, 'register/register.twig', $data);
 
     }
+    if($data["password"]!==$data["password_re"]){
+         $data["error"] = "パスワードの再入力に間違いがあります。ね";
+
+      // 入力フォームを再度表示します
+         return $this->view->render($response, 'register/register.twig', $data);
+
+    }
 
     //DB登録に必要ない情報は削除します
     unset($data["password_re"]);
+
+    //if passが異なるなら弾く
+    //if passが短いなら弾く
 
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
     $id = $user->insert($data);
