@@ -3,6 +3,13 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+/*
+// recommend/index.twigのテスト用ルーティング
+// ここのコメントアウトを取る場合は、use Model\Dao\Alc;以下をコメントアウト
+$app->get('/recommend/', function (Request $request, Response $response) {
+    // Render index view
+    return $this->view->render($response, 'recommend/index.twig');
+});*/
 
 use Model\Dao\Alc;
 
@@ -21,7 +28,7 @@ $app->get('/recommend/', function (Request $request, Response $response) {
     //ユーザーDAOをインスタンス化
     $alc = new Alc($this->db);
 
-    $r = rand(1,2);
+    $r = rand(1,10);
 
 
 
@@ -46,8 +53,7 @@ $app->get('/recommend/', function (Request $request, Response $response) {
         $alcExppass = $result["exppass"];
         $alcAmount = $result["amount"];
 
-        echo $alcName;
-        echo $alcPicpass;
+
 
 
     } else {
@@ -57,6 +63,6 @@ $app->get('/recommend/', function (Request $request, Response $response) {
     }
 
     // Render index view
-    return 0;
+    return  $this->view->render($response, 'recommend/index.twig', ["result"=>$result]);;
 
 });

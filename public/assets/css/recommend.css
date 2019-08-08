@@ -1,0 +1,21 @@
+.pre-recommend{
+  margin:1em;
+}
+.main-box{
+  margin:1em;
+}
+.alc-name{
+  text-align:center;
+  font-size:3em;
+}
+.alc-pic{
+  width:100%;
+  height:100%;
+}
+.alc-exp{
+  margin:1em;
+}
+.link-button{
+  display:inline-block;
+  width:100%;
+}
