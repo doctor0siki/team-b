@@ -13,6 +13,7 @@ namespace Model\Dao;
  * @since 2018/08/28
  * @package Model\Dao
  */
+//User tableを操作する場合はclass User extends Daoを作る
 class User extends Dao
 {
 
