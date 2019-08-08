@@ -36,8 +36,11 @@ $app->post('/login/', function (Request $request, Response $response) {
         //セッションにユーザー情報を登録
         $this->session->set('user_info', $result);
 
+
         //TOPへリダイレクト
-        return $response->withRedirect('/');
+
+        return $response->withRedirect('/logintop/');
+
 
     } else {
         //入力項目がマッチしない場合エラーを出す
