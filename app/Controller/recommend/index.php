@@ -1,0 +1,62 @@
+<?php
+
+use Slim\Http\Request;
+use Slim\Http\Response;
+
+
+use Model\Dao\Alc;
+
+// ログイン画面コントローラ
+
+
+
+
+
+// ログインロジックコントローラ
+$app->get('/recommend/', function (Request $request, Response $response) {
+
+    //POSTされた内容を取得します
+    //$data = $request->getParsedBody();
+
+    //ユーザーDAOをインスタンス化
+    $alc = new Alc($this->db);
+
+    $r = rand(1,2);
+
+
+
+
+    //$param["name"] = $data["name"];
+    //$param["picpass"] = $data["picpass"];
+    //$param["exppass"] = $data["exppass"];
+    $param["id"] = $r;
+
+
+
+
+    //入力された情報から会員情報を取得
+    $result = $alc ->select($param, "", "", 1,false);
+
+    //結果が取得できたらログイン処理を行い、TOPへリダイレクト
+    if($result){
+
+
+        $alcName = $result["name"];
+        $alcPicpass = $result["picpass"];
+        $alcExppass = $result["exppass"];
+        $alcAmount = $result["amount"];
+
+        echo $alcName;
+        echo $alcPicpass;
+
+
+    } else {
+        //入力項目がマッチしない場合エラーを出す
+        echo "false";
+
+    }
+
+    // Render index view
+    return 0;
+
+});
