@@ -38,7 +38,9 @@ $app->post('/login/', function (Request $request, Response $response) {
 
 
         //TOPへリダイレクト
+
         return $response->withRedirect('/logintop/');
+
 
     } else {
         //入力項目がマッチしない場合エラーを出す
