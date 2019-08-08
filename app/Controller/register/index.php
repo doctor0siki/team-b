@@ -48,6 +48,9 @@ $app->post('/register/', function (Request $request, Response $response) {
     //DB登録に必要ない情報は削除します
     unset($data["password_re"]);
 
+    //passwordをハッシュ化
+    $data["password"] = password_hash($data["password"],PASSWORD_DEFAULT);
+
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
     $id = $user->insert($data);
 

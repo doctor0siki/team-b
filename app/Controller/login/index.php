@@ -25,19 +25,17 @@ $app->post('/login/', function (Request $request, Response $response) {
     $user = new User($this->db);
 
     $param["email"] = $data["email"];
-    $param["password"] = $data["password"];
 
     //入力された情報から会員情報を取得
     $result = $user->select($param, "", "", 1,false);
 
-    //結果が取得できたらログイン処理を行い、TOPへリダイレクト
-    if($result){
-
+    if(password_verify($data["password"],$result["password"])){
         //セッションにユーザー情報を登録
         $this->session->set('user_info', $result);
 
         //TOPへリダイレクト
-        return $response->withRedirect('/logintop/index.twig');
+        return $this->view->render($response, 'logintop/index.twig', $data);
+
 
     } else {
         //入力項目がマッチしない場合エラーを出す
