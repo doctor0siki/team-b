@@ -1,22 +1,20 @@
-.box{
-  background-color: #white;
-}
+
 .container{
   background-image: url('/assets/img/enkai.jpg');
-  opacity: 0.5;
-  position: fixed;
-  z-index: -1;
+  opacity: 0.6;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size:cover;
+  text-align:center;
 }
 .optext{
   color:white;
   -webkit-text-stroke: 1px #000;
   text-align: center;
   font-weight: bold;
-  margin: 30px;
-  z-index: 1;
+  margin-top:20px;
+  background-color: #555555;
 }
-.wrap{
-  padding-top:50px;
+.op{
+
 }
