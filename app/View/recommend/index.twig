@@ -19,7 +19,7 @@
         <div class="box main-box">
               <div class="row">
                 <div class="col-12 alc-name">
-                  ビール
+                  {{result.name}}
                 </div>
               </div>
                 <!-- beer.imgはテスト画像 実際はDBのalc.picPassを指定-->
@@ -28,7 +28,7 @@
 
               <div class="row">
                 <div class="col-12">
-                  <img class="alc-pic" src="/assets/img/beer.jpg" />
+
                 </div>
               </div>
 <!--              <div class="row" style="margin:1em;">夏と言えばビール。冬でもビール。勿論春・秋もビール。食前酒として「とりあえずビール」と注文する人が多い。独特の苦味のあるのが特徴。</div>-->
@@ -41,7 +41,7 @@
               </div>
         </div>
     </div>
-    {{result.picpass}}
+
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
