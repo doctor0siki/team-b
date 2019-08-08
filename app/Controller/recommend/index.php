@@ -2,6 +2,9 @@
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Model\Dao\User;
+use Controller\login\index;
+
 
 /*
 // recommend/index.twigのテスト用ルーティング
@@ -22,8 +25,9 @@ use Model\Dao\Alc;
 // ログインロジックコントローラ
 $app->get('/recommend/', function (Request $request, Response $response) {
 
-    //POSTされた内容を取得します
-    //$data = $request->getParsedBody();
+    if(is_null($this->session->user_info )){
+      return  $response->withRedirect('/login/');
+    }
 
     //ユーザーDAOをインスタンス化
     $alc = new Alc($this->db);

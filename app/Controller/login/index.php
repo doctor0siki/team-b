@@ -33,8 +33,10 @@ $app->post('/login/', function (Request $request, Response $response) {
         //セッションにユーザー情報を登録
         $this->session->set('user_info', $result);
 
+
         //TOPへリダイレクト
-        return $this->view->render($response, 'logintop/index.twig', $data);
+
+        return $response->withRedirect('/logintop/');
 
 
     } else {

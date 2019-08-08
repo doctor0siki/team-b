@@ -1,0 +1,22 @@
+.box{
+  background-color: #white;
+}
+.container{
+  background-image: url('/assets/img/enkai.jpg');
+  opacity: 0.5;
+  position: fixed;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.optext{
+  color:white;
+  -webkit-text-stroke: 1px #000;
+  text-align: center;
+  font-weight: bold;
+  margin: 30px;
+  z-index: 1;
+}
+.wrap{
+  padding-top:50px;
+}
