@@ -5,7 +5,7 @@
   "hostname": "192.168.0.19",
   "port": "22",
   "target": "/opt/intern/app/team-b2/project",
-  "ignore": [
+ [
     ".remote-sync.json",
     ".git/**"
   ],
