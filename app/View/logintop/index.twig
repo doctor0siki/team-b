@@ -6,6 +6,7 @@
 
 {# 適用させたいスタイルシートのパスを指定します #}
 {% block header_scripts_add %}
+<link rel="stylesheet" href="/assets/css/logintop.css" >
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
@@ -15,22 +16,20 @@
     </div>
     <div class="container">
         <div class="box">
-            <div class="row">
-
-              ここにコンテンツが入る
-              <h2>
-              <p class="optext" id="optext">機能説明</p>
-              <h2>
-
-<p>
-  <button type="button"class="btn btn-primary btn-lg btn-block active">オススメを探す</button>
-</p>
-
-</div>
+            <div class="row col-12">
+              <img src="public\assets\img\enkai.jpg" alt="beer">
+              <br>
+              <h2 class="optext text-center" id="optext">機能説明</h2>
+              <br>
+              <h3>あなたにおススメの酒を紹介します<h3>
+              <p>
+              <br>
+              <button type="button"class="btn btn-primary btn-lg btn-block active">オススメを探す</button>
+              </p>
+            </div>
 
             </div>
-        </div>
-    </div>
+      </div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
