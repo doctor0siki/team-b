@@ -1,0 +1,55 @@
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
+
+
+
+{#HTMLのタイトルを定義します。#}
+{% block title %}お酒の履歴{% endblock %}
+
+{# 適用させたいスタイルシートのパスを指定します #}
+{% block header_scripts_add %}
+<link rel="stylesheet" href="/assets/css/recommend.css" >
+
+{% endblock %}
+{#ここから表示したい情報を記載します。#}
+{% block page_content %}
+
+<!-- 以下 testデータ-->
+{% set result = [
+  {'date':'2019/8/9', 'alcName':'ビール','alcPicPass':'01_ビール.jpg'},
+] %}
+
+    <div class="page-header text-center pre-recommend">
+        <h2>History</h2>
+    </div>
+    <div class="container">
+        <div class="box main-box">
+          <table class="table">
+            <tr><th>
+              飲んだ時間
+            </th><th>
+              お酒の種類
+            </th><th>
+            </th></tr>
+
+            {% for row in result %}
+            <tr><td style="vertical-align:middle;">
+              {{ row.date }}
+            </td><td style="vertical-align:middle;">
+              {{ row.alcName }}
+            </td><td style="vertical-align:middle;">
+              <img src="/assets/img/alc/{{ row.alcPicPass}}" style="width:4em;height:4em;"/>
+            </td></tr>
+
+            {% endfor %}
+          </table>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{#共通フッタとして追記したい情報を記載します。#}
+
+
+{% block footer_scripts_add %}{% endblock %}
