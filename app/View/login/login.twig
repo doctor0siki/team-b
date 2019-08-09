@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="well">
-                        <form id="loginForm" method="POST" action="/login/">
+                        <form id="loginForm" method="POST" action="/login/" onsubmit="return hashing(this)">
                             <div class="form-group">
                                 <label for="email" class="control-label">ユーザーネーム</label>
                                 <input type="email" class="form-control" id="email" name="email" value="{{ email }}" required title="Please enter you username" placeholder="example@gmail.com">
@@ -51,8 +51,20 @@
                 </div>
             </div>
         </div>
-    </div
+    </div>
 {% endblock %}
-
 {#共通フッタとして追記したい情報を記載します。#}
-{% block footer_scripts_add %}{% endblock %}
+{% block footer_scripts_add %}
+<script type="text/javascript" src="/assets/js/sha256.js"></script>
+<script type="text/javascript" src="/assets/js/hash.js"></script>
+<script>
+
+function hashing(frm){
+  const pass = frm.elements.password.value;
+  frm.elements.password.value = pass_hash(pass);
+
+  return true;//submit
+
+}
+</script>
+{% endblock %}
