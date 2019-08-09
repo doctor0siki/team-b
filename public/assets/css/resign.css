@@ -5,13 +5,17 @@
   height:100%;
   background-color: rgba(0,0,0,0.5);
 }
+
 .body{
   background-image: url('/assets/img/enkai.jpg');
+  background-size:cover;
+  opacity: 0.8;
+
   /*opacity: 1;
   background-size: 100%;
   background-repeat:no-repeat;
-  background-position: center;*/
-  background-size:cover;
+  background-position: center;
+  background-size:cover;*/
 }
 .body::before{
   background-color:rgba(0, 0, 0, 0.5);
