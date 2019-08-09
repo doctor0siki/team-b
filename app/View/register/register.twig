@@ -6,11 +6,14 @@
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
+<link rel="stylesheet" href="/assets/css/register.css" >
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <div class="page-header text-center">
+<div class="wrap">
+  <div class="wrap-inner">
+    <div class="kain text-center">
         <h1>会員登録</h1>
     </div>
     <div class="container">
@@ -53,13 +56,15 @@
                             <div class="form-group">
                                 <input type="checkbox" id="agree"><label for="agree">上記利用規約に同意します</label>
                             </div>
-                            <button type="submit" id="submit-button" class="btn btn-info btn-block">新規登録</button>
+                            <button type="submit" id="submit-button" class="btn btn-info btn-block sinki">新規登録</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+  </div>
+</div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
