@@ -1,11 +1,7 @@
 
-.container{
+.body{
   background-image: url('/assets/img/enkai.jpg');
-  opacity: 0.6;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size:cover;
-  text-align:center;
+  opacity: 0.8;
 }
 .optext{
   color:white;
@@ -16,5 +12,7 @@
   background-color: #555555;
 }
 .op{
-
+}
+.ruby{
+  font-size: 5rem;
 }

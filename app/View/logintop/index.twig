@@ -11,22 +11,31 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <div class="page-header text-center">
-
-    </div>
-    <div class="container">
-            <h1>LOGIN TOP</h1>
-              <h2 class="op">
-              <p>機能説明</p>
-            </h2>
+    <div class="wrap text-center">
+    <div class="body">
+      <h2 class="ruby">しゅしゅ</h2>
+      <h1 >お 酒 酒 め</h1>
+      <p>あなたにとっての最高のお酒を探しに行きませんか？<p>
             </div>
               <h3>
-                <p  class="optext" id="optext">
-                  当サイトでは一人ひとりに合ったお酒をお勧めするサービスを行っています。<br>
-                  自分に合ったお酒を探してみよう！<br>
-                </p>
-                  <button class="link-button btn btn-default" onclick="location.href='/recommend/'">お勧めを探す！
+                  <button class="link-button btn btn-default" onclick="location.href='/recommend/'">お酒酒め！</button>
+                  <div  class="optext" id="optext">
+                    <div class="col-md-4">
+                    <h2>サービス</h2>
+                    当サイトでは一人ひとりに合ったお酒をお勧めするサービスを行っています。<br>
+                    自分に合ったお酒を探してみよう！!!!<br>
+                  </div>
+                    <div class="col-md-4"></div>
+                    <div class=col-md-4>
+                    <h2>サービス</h2>
+                    当サイトでは一人ひとりに合ったお酒をお勧めするサービスを行っています。<br>
+                    自分に合ったお酒を探してみよう！!!!<br>
+                  </div>
+                  </div>
+
+                    <button class="link-button btn btn-default" onclick="location.href='/recommend/'">お酒酒め！</button>
               </h3>
+    </div>
             {#共通フッタとして追記したい情報を記載します。#}
             <div class = "footer">
             {% block footer_scripts_add %}{% endblock %}
