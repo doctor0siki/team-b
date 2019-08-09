@@ -38,12 +38,25 @@
               </div>
 
               <div class="buttons row">
-                <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="location.href='/recommend/'">他のお酒を探す</button></div>
+                <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="location.href='/add/'">飲む(記録する)</button></div>
+                <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="dontDrink()">飲まない</button></div>
+
+<!--                <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="location.href='/recommend/'">他のお酒を探す</button></div>
                 <div class="col-6 text-center"><button class="link-button btn btn-default" onclick="location.href='/logintop/'">戻る</button></div>
-              </div>
+-->              </div>
         </div>
     </div>
 
+<script>
+function addAlc(){};
+function dontDrink(){
+  if(window.confirm("他のお酒を探す")){
+    location.href='/recommend/';
+  }else{
+    location.href='/logintop/';
+  }
+};
+</script>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
