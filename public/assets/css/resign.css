@@ -5,13 +5,17 @@
   height:100%;
   background-color: rgba(0,0,0,0.5);
 }
+
 .body{
   background-image: url('/assets/img/enkai.jpg');
+  background-size:cover;
+  opacity: 0.8;
+
   /*opacity: 1;
   background-size: 100%;
   background-repeat:no-repeat;
-  background-position: center;*/
-  background-size:cover;
+  background-position: center;
+  background-size:cover;*/
 }
 .body::before{
   background-color:rgba(0, 0, 0, 0.5);
@@ -37,10 +41,7 @@
   font-size: 1.5rem;
 }
 .optext{
-
-  color: #333333;
-  padding-top: 20px;
-
+  color:#f26800;
   /*-webkit-text-stroke: 1px #000;*/
   text-align: center;
   font-weight: bold;
@@ -59,9 +60,7 @@
   padding-bottom: 20px;
 }
 .lets{
-
-    color: #333333;
-
+    color:white;
     font-size:  2rem;
 }
 /*  ここから画像の切り替えについての設定   */
@@ -142,24 +141,3 @@
 		opacity: 0;
 	}
 }
-
-h2{
-  padding:1em;
-}
-.lets{
-  padding:1em;
-}
-.small-size-text{
-  text-size:0.5em;
-  color:#777777;
-}
-h4{
-  padding:0.25em;
-}
-.feature-osyusyume{
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  color:#555555;
-
-}
-

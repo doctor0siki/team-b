@@ -6,21 +6,40 @@
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
+<link rel="stylesheet" href="/assets/css/resign.css" >
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
+<div class="main">
+
     <div class="page-header text-center">
-        <h1>退会の確認</h1>
+        <h1><font color="#FFFFFF">退会の確認</font></h1>
     </div>
-    <div class="container">
-        <div class="box">
+</body>
+<div class="body">
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="well text-center">
-                        退会をすると、サービスが利用できなくなります。よろしいですか？
+                      <font color="#FFFFFF">
+
+
+                        退会をすると、お酒酒め出来なくなります。<br >
+                        よろしいですか？
                         <br>
                         <br>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                      </font>
+
+
                         <p class="text-center">
                         <form action="/resign/" method="post">
                             <button class="btn btn-info">退会する</button>
@@ -28,10 +47,11 @@
                         </p>
                     </div>
                 </div>
+              </div>
 
-            </div>
-        </div>
     </div>
+</div>
+</div>
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
