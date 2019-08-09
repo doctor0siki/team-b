@@ -6,10 +6,21 @@
 
 {# このページに適用させたいスタイルシートを指定します #}
 {% block header_scripts_add %}
+<link rel="stylesheet" href="/assets/css/login.css" >
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
+<div class="head">
+  <div class="explain">
+  <h2 class="ruby">しゅしゅ</h2>
+  <h1 class="title">お 酒 酒 め</h1>
+  <p class="sub-title">あなたにとっての最高のお酒を探しませんか？<p>
+  </div>
+</div>
+<div body>
+<div class="main box">
+  <div class="sub">
     <div class="page-header text-center">
         <h1>ログイン</h1>
     </div>
@@ -32,26 +43,21 @@
                                     <div class="alert alert-danger" role="alert">{{ error }}</div>
                                 </div>
                             {% endif %}
-                            <button type="submit" class="btn btn-success btn-block">ログイン</button>
+                            <button type="submit" class="link-button btn btn-info btn-lg btn-block">ログイン</button>
                         </form>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <p class="lead">会員登録は <span class="text-success">無料</span> 今すぐ登録！</p>
-                    <ul class="list-unstyled">
-                        <li><span class="fa fa-check text-success"></span> すべての注文が見れます。</li>
-                        <li><span class="fa fa-check text-success"></span> 早い追加注文。</li>
-                        <li><span class="fa fa-check text-success"></span> お気に入りを保存できます。</li>
-                        <li><span class="fa fa-check text-success"></span> 素早い購入。</li>
-                        <li><span class="fa fa-check text-success"></span> クーポンプレゼント
-                            <small>(カスタマー限定)</small>
-                        </li>
-                    </ul>
+                    <p class="lead">会員登録は <span class="mu">無料</span> 今すぐ登録！</p>
+
                     <p><a href="/register/" class="btn btn-info btn-block">今すぐ登録</a></p>
                 </div>
             </div>
         </div>
     </div>
+  </div>
+  </div>
+</div>
 {% endblock %}
 {#共通フッタとして追記したい情報を記載します。#}
 {% block footer_scripts_add %}
