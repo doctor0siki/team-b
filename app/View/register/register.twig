@@ -64,10 +64,20 @@
 
 {#共通フッタとして追記したい情報を記載します。#}
 {% block footer_scripts_add %}
+<script type="text/javascript" src="/assets/js/sha256.js"></script>
+<script type="text/javascript" src="/assets/js/hash.js"></script>
 <script>
+
 function formatCheck(frm){
   if(frm.elements.agree.checked==true){
-    return true;//submit
+
+      const pass = frm.elements.password.value;
+      const pass_re =frm.elements.password_re.value;
+      frm.elements.password.value = pass_hash(pass);
+      frm.elements.password_re.value = pass_hash(pass_re);
+
+      return true;//submit
+      
   }else{
     alert("利用規約への同意が必要です。");
     return false;
