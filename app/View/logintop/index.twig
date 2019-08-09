@@ -11,22 +11,43 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-    <div class="page-header text-center">
-
-    </div>
-    <div class="container">
-            <h1>LOGIN TOP</h1>
-              <h2 class="op">
-              <p>機能説明</p>
-            </h2>
+    <div class="main text-center">
+    <div class="body">
+      <div class="explain">
+      <h2 class="ruby">しゅしゅ</h2>
+      <h1 class="title">お 酒 酒 め</h1>
+      <p class="sub-title">あなたにとっての最高のお酒を探しに行きませんか？<p>
+      </div>
             </div>
-              <h3>
-                <p  class="optext" id="optext">
-                  当サイトでは一人ひとりに合ったお酒をお勧めするサービスを行っています。<br>
-                  自分に合ったお酒を探してみよう！<br>
-                </p>
-                  <button class="link-button btn btn-default" onclick="location.href='/recommend/'">お勧めを探す！
-              </h3>
+              <div class="sub-main">
+                  <div class="btn-resize">
+                  <button class="link-button btn btn-info btn-lg btn-block" onclick="location.href='/recommend/'">お酒を探す!</button>
+                  </div>
+                  <div  class="optext" id="optext">
+                    <div class="sub-main">
+                    <h2>お酒酒めって？</h2>
+                    お酒酒めは一人ひとりに合ったお酒をお酒酒め(おススメ)します。<br>
+                    簡単なアンケートに答えるだけで（未実装）、今あなたにおススメのお酒を紹介します。<br>
+
+                  </div>
+                  <div class="album">
+                    <img class="img1" src="/assets/img/alc/1_ビール.jpg" alt="Make your system smart.">
+                    <img class="img2" src="/assets/img/alc/10_焼酎.jpg" alt="Smart Limited Liability Company">
+                    <img class="img3" src="/assets/img/alc/9_カシスオレンジ.jpg" alt="Smart Limited Liability Company">
+                    <img class="img4" src="/assets/img/alc/5_ワイン.jpg" alt="Smart Limited Liability Company">
+                    </div>
+                    <div class=sub-main>
+                    <h2>サービス</h2>
+                    お酒を探す!のボタンを押し、4.5個の質問に答える（未実装）と回答時のあなたに合ったお酒をおススメします。<br>
+                    自分に合ったお酒を探してみよう！！！<br>
+                  </div>
+                  </div>
+                  <p class="lets">Let's お酒酒めっ！！<p>
+                  <div class="btn-resize">
+                    <button class="link-button btn btn-info btn-lg btn-block" onclick="location.href='/recommend/'">お酒を探す!</button>
+                  </div>
+              </div>
+    </div>
             {#共通フッタとして追記したい情報を記載します。#}
             <div class = "footer">
             {% block footer_scripts_add %}{% endblock %}
